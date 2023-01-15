@@ -25,11 +25,6 @@
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook"
   },
-  "lint-staged": {
-    "*.{tsx|ts}": [
-      "eslint --fix"
-    ]
-  },
   "dependencies": {
     "@minoru/react-dnd-treeview": "^3.4.0",
     "@tanstack/react-table": "^8.7.6",

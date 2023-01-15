@@ -1,3 +1,4 @@
 vite.config.ts
 tailwind.config.cjs
-.commitlintrc
+.commitlintrc.json
+.lintstagedrc.json
