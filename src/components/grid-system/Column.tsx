@@ -12,8 +12,8 @@ const BASE_COLUMN_CLASS = classNames(
 );
 
 interface ColumnProps {
-  cols?: string,
-  smCols?: string,
+  cols?: string | number,
+  smCols?: string | number,
 }
 
 const Column: FC<PropsWithChildren<ColumnProps>> = ({ children }) => {

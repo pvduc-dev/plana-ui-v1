@@ -1,13 +1,13 @@
 import type { FC, PropsWithChildren } from 'react';
+import { useState } from 'react';
 
 interface ButtonProps {
   isDisabled?: boolean
 }
 
 const Button: FC<PropsWithChildren<ButtonProps>> = ({ children }) => {
-  // TODO: Implement
   return (
-    <button>
+    <button role="button">
       {children}
     </button>
   );

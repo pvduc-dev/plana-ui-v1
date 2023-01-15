@@ -1,0 +1,11 @@
+{
+  "testEnvironment": "jest-environment-jsdom",
+  "setupFilesAfterEnv": [
+    "<rootDir>/setupTest.ts"
+  ],
+  "moduleNameMapper": {
+    "\\.(css)$": "identity-obj-proxy"
+  },
+  "collectCoverage": false,
+  "collectCoverageFrom": ["src/**/*.{ts,tsx}"]
+}

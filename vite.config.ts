@@ -30,7 +30,7 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
       name: 'Plana',
-      formats: ['es', 'cjs', 'umd'],
+      formats: ['es', 'umd'],
       fileName: (format) => `plana.${format}.js`,
     },
     rollupOptions: {

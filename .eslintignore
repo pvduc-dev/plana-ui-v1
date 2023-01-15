@@ -2,3 +2,5 @@ vite.config.ts
 tailwind.config.cjs
 .commitlintrc.json
 .lintstagedrc.json
+setupTest.ts
+babel.config.json
