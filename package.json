@@ -19,8 +19,7 @@
     "postpack": "pinst --enable",
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint \"src/**/*.{ts,tsx,js,jsx}\"",
-    "lint:fix": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --fix",
+    "lint": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --fix",
     "test": "echo \"Test successfully\" exit 0",
     "lint-staged": "lint-staged",
     "storybook": "start-storybook -p 6006",
@@ -28,8 +27,8 @@
   },
   "lint-staged": {
     "*.{tsx|ts}": [
-      "npm run lint:fix",
-      "git add ."
+      "eslint --fix",
+      "git add"
     ]
   },
   "dependencies": {
