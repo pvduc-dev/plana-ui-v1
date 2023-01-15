@@ -1,5 +1,5 @@
 // import tailwindcss from '@styles/tailwind.module.css';
-import type { FC, PropsWithChildren} from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
 // const BASE_BUTTON_CLASS = classNames(
 //   tailwindcss['block']

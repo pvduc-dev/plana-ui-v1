@@ -28,7 +28,7 @@
   },
   "lint-staged": {
     "*.{tsx|ts}": [
-      "npm run test",
+      "npm run lint:fix",
       "git add ."
     ]
   },
