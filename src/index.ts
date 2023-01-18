@@ -2,7 +2,7 @@
 export { default as Button } from './components/button/Button';
 
 // Tree view
-export { default as TreeView } from './components/tree-view/TreeView';
+// export { default as TreeView } from './components/tree-view/TreeView';
 
 // Layout
 export { default as Container } from './components/grid-system/Container';
