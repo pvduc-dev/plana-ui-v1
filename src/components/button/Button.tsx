@@ -6,6 +6,8 @@ import type { AriaButtonProps } from '@react-types/button';
 import { useButton } from 'react-aria';
 
 interface ButtonProps extends AriaButtonProps {
+  execute?: () => void;
+  canExecute: true;
   isBlock?: boolean;
   color?: string;
   isLoading?: boolean;
@@ -34,9 +36,9 @@ const Button: FC<PropsWithChildren<ButtonProps>> = ({
     tailwindcss['text-white'],
     tailwindcss['text-sm'],
     tailwindcss['font-medium'],
-    tailwindcss['px-5'],
-    tailwindcss['py-2.5'],
-    tailwindcss['min-w-[5.5rem]'],
+    tailwindcss['px-4'],
+    tailwindcss['py-2'],
+    tailwindcss['min-w-[5.75rem]'],
     tailwindcss['rounded-md'],
     tailwindcss['outline-none'],
     {
@@ -49,7 +51,7 @@ const Button: FC<PropsWithChildren<ButtonProps>> = ({
       [tailwindcss['bg-warning']]: color === 'warning',
       [tailwindcss['bg-danger']]: color === 'danger',
       [tailwindcss['bg-secondary']]: color === 'secondary',
-      [tailwindcss['font-normal']]: color === 'secondary',
+      [tailwindcss['font-medium']]: color === 'secondary',
       [tailwindcss['text-black']]: color === 'secondary',
     },
     className,
