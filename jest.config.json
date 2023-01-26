@@ -3,9 +3,17 @@
   "setupFilesAfterEnv": [
     "<rootDir>/setupTest.ts"
   ],
-  "moduleNameMapper": {
-    "\\.(css)$": "identity-obj-proxy"
+  "transform": {
+    "\\.(ts|tsx)$": "babel-jest",
+    "^.+\\.css$": [
+      "jest-transform-css",
+      {
+        "modules": true
+      }
+    ]
   },
   "collectCoverage": false,
-  "collectCoverageFrom": ["src/**/*.{ts,tsx}"]
+  "collectCoverageFrom": [
+    "src/**/*.{ts,tsx}"
+  ]
 }

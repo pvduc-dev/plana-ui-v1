@@ -79,6 +79,7 @@
         "includeInternal": true,
         "includeTypes": true
       }
-    ]
+    ],
+    "@typescript-eslint/dot-notation": "off"
   }
 }

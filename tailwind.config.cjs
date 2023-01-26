@@ -363,22 +363,7 @@ module.exports = {
       DEFAULT: '1',
     },
     fontFamily: {
-      sans: [
-        'ui-sans-serif',
-        'system-ui',
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Segoe UI"',
-        'Roboto',
-        '"Helvetica Neue"',
-        'Arial',
-        '"Noto Sans"',
-        'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-        '"Noto Color Emoji"',
-      ],
+      sans: ['Helvetica Neue', 'sans-serif'],
       serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
       mono: [
         'ui-monospace',
@@ -668,6 +653,7 @@ module.exports = {
     },
     minWidth: {
       0: '0px',
+      20: '5rem',
       full: '100%',
       min: 'min-content',
       max: 'max-content',
@@ -950,6 +936,21 @@ module.exports = {
       40: '40',
       50: '50',
     },
+    extend: {
+      colors: {
+        transparent: 'transparent',
+        black: '#333',
+        white: '#fff',
+        primary: '#1D5EFF',
+        'darken-primary': '#0035cb',
+        'lighten-primary': '#728bff',
+        info: '#11cdef',
+        success: '#2dce89',
+        danger: '#FF5252',
+        warning: '#FFAD43',
+        secondary: '#f0f0f4',
+      },
+    }
   },
   variantOrder: [
     'first',
