@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.0](https://github.com/pvduc-dev/plana-ui/compare/v2.3.0...v2.4.0) (2023-02-18)
+
+
+### Features
+
+* update `package.json` config ([0d55e3d](https://github.com/pvduc-dev/plana-ui/commit/0d55e3d41c3232a13393e4000d37e5720a52b1bf))
+
 ## [2.3.0](https://github.com/pvduc-dev/plana-ui/compare/v2.2.0...v2.3.0) (2023-02-18)
 
 
