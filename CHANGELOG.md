@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/pvduc-dev/plana-ui/compare/v2.0.0...v2.1.0) (2023-02-18)
+
+
+### Features
+
+* update `Flex` component ([f5cd612](https://github.com/pvduc-dev/plana-ui/commit/f5cd612568ee43298ed98372bb466ccc84214cb7))
+
 ## [2.0.0](https://github.com/pvduc-dev/plana-ui/compare/v1.0.0...v2.0.0) (2023-02-18)
 
 
