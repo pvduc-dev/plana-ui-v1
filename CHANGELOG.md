@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/pvduc-dev/plana-ui/compare/v2.1.0...v2.2.0) (2023-02-18)
+
+
+### Features
+
+* update `Container` component ([5015d26](https://github.com/pvduc-dev/plana-ui/commit/5015d26dda65384f117a5ce337b31012a795ed5a))
+
 ## [2.1.0](https://github.com/pvduc-dev/plana-ui/compare/v2.0.0...v2.1.0) (2023-02-18)
 
 
