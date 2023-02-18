@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.0](https://github.com/pvduc-dev/plana-ui/compare/v2.4.0...v2.5.0) (2023-02-18)
+
+
+### Features
+
+* update `ci/cd` ([8b09ac3](https://github.com/pvduc-dev/plana-ui/commit/8b09ac391727322e0965a3d34868b23612f20f81))
+
 ## [2.4.0](https://github.com/pvduc-dev/plana-ui/compare/v2.3.0...v2.4.0) (2023-02-18)
 
 
