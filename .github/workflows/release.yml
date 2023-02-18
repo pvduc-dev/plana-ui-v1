@@ -13,7 +13,7 @@ jobs:
           release-type: node
           package-name: plana-ui
           token: ${{secrets.GHP_TOKEN}}
-          prerelease: beta
+          prerelease: true
       - uses: actions/checkout@v3
         if: ${{ steps.release.outputs.release_created }}
       - uses: actions/setup-node@v3
