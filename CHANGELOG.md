@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.6.0](https://github.com/pvduc-dev/plana-ui/compare/v2.5.0...v2.6.0) (2023-02-18)
+
+
+### Features
+
+* update `prerelease` ([8666ebd](https://github.com/pvduc-dev/plana-ui/commit/8666ebd537e93d1be2be0b0631c9ccc034b049eb))
+* update `prerelease` ([9e5d88d](https://github.com/pvduc-dev/plana-ui/commit/9e5d88db50e5fe4a1f0dec5caebb424cde53d928))
+
 ## [2.5.0](https://github.com/pvduc-dev/plana-ui/compare/v2.4.0...v2.5.0) (2023-02-18)
 
 
