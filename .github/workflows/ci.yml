@@ -6,9 +6,9 @@ on:
       - 'feature/**'
       - 'bugfix/**'
       - 'hotfix/**'
-  pull_request:
-    branches:
-      - develop
+#  pull_request:
+#    branches:
+#      - develop
 
 env:
   NODE_VERSION: 16
@@ -26,7 +26,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
       - run: npm ci
-      - run: npx commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
+      - run: npx commitlint --from ${{ github.event.push.base.sha }} --to ${{ github.event.push.head.sha }} --verbose
 
   lint-code:
     runs-on: ubuntu-latest
