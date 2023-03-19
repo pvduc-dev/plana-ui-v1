@@ -1,5 +1,5 @@
 // Button
-export { default as Button } from './components/button/Button';
+// export { default as Button } from './components/button/Button';
 
 // Tree view
 // export { default as TreeView } from './components/tree-view/TreeView';

@@ -35,7 +35,7 @@ const Button: FC<PropsWithChildren<ButtonProps>> = ({
   const buttonClassName = useMemo(() => classNames(
     tailwindcss['text-white'],
     tailwindcss['text-sm'],
-    tailwindcss['font-medium'],
+    // tailwindcss['font-medium'],
     tailwindcss['px-4'],
     tailwindcss['py-2'],
     tailwindcss['min-w-[5.75rem]'],
