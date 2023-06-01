@@ -1,3 +1,4 @@
+export * from './components/icon';
 // Button
 // export { default as Button } from './components/button/Button';
 
