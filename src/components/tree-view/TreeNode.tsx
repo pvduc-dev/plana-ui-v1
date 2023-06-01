@@ -57,6 +57,12 @@ const TreeNode: FC<TreeNodeProps> = ({ node, depth, isOpen, onToggle }) => {
             // />
             <AngleSmallRightIcon
               size="1rem"
+              className={classNames(
+                tailwindcss['transition-transform'],
+                {
+                  [tailwindcss['rotate-90']]: isOpen,
+                },
+              )}
             />
           )}
         </div>
