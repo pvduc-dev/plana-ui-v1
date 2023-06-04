@@ -15,12 +15,12 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args}/>;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  children: 'Bắt đầu ngay!',
+  children: 'Sent invites!',
 };
 
 export const Success = Template.bind({});
 Success.args = {
-  children: 'Gửi',
+  children: 'Thành công',
   color: 'success',
 };
 
@@ -32,18 +32,18 @@ Secondary.args = {
 
 export const Info = Template.bind({});
 Info.args = {
-  children: 'Xem chi tiết',
+  children: 'Thông tin',
   color: 'info',
 };
 
 export const Warning = Template.bind({});
 Warning.args = {
-  children: 'Tiếp tục',
+  children: 'Cảnh báo',
   color: 'warning',
 };
 
 export const Danger = Template.bind({});
 Danger.args = {
-  children: 'Xóa',
+  children: 'Xoá',
   color: 'danger',
 };
