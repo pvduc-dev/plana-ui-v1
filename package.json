@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@minoru/react-dnd-treeview": "^3.4.0",
-    "@tanstack/react-table": "^8.7.6",
+    "@tanstack/react-table": "^8.9.3",
     "classnames": "^2.3.2",
     "react": "16.8.0 || >=17.x",
     "react-aria": "^3.22.0",
