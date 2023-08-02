@@ -4,6 +4,6 @@
   ],
   "rules": {
     "subject-case": [2, "always", "sentence-case"],
-    "body-full-stop": [2, "always", "."]
+    "subject-full-stop": [2, "always", "."]
   }
 }
