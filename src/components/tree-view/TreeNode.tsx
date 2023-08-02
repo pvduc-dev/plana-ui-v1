@@ -1,11 +1,8 @@
 import type { FC, MouseEventHandler } from 'react';
 import { NodeModel } from '@minoru/react-dnd-treeview';
-import { ReactComponent as FolderIcon } from '../../icons/folder.svg';
-import { ReactComponent as OpenedFolderIcon } from '../../icons/opened-folder.svg';
-import { ReactComponent as ChevronRight } from '../../icons/chevron-left.svg';
-import { ReactComponent as FileIcon } from '../../icons/file.svg';
 import tailwindcss from '../../styles/tailwind.module.css';
 import classNames from 'classnames';
+import { AngleSmallRightIcon, CaretRightIcon } from '../icon';
 
 interface TreeNodeProps {
   node: NodeModel;
@@ -40,21 +37,32 @@ const TreeNode: FC<TreeNodeProps> = ({ node, depth, isOpen, onToggle }) => {
           className={classNames(
             tailwindcss['w-4'],
             tailwindcss['h-4'],
+            tailwindcss['cursor-pointer'],
           )}
+          onClick={handleToggle}
         >
           {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
           {/*@ts-ignore*/}
           {(node.data.type === 'folder') && (
-            <ChevronRight
+            // <ChevronRight
+            //   className={classNames(
+            //     tailwindcss['transition-transform'],
+            //     {
+            //       [tailwindcss['rotate-90']]: isOpen,
+            //     },
+            //   )}
+            //   width="16px"
+            //   height="16px"
+            //   onClick={handleToggle}
+            // />
+            <AngleSmallRightIcon
+              size="1rem"
               className={classNames(
                 tailwindcss['transition-transform'],
                 {
                   [tailwindcss['rotate-90']]: isOpen,
                 },
               )}
-              width="16px"
-              height="16px"
-              onClick={handleToggle}
             />
           )}
         </div>
@@ -70,21 +78,24 @@ const TreeNode: FC<TreeNodeProps> = ({ node, depth, isOpen, onToggle }) => {
           {/*@ts-ignore*/}
           {node.data.type === 'folder' ? (
             isOpen ? (
-              <OpenedFolderIcon
-                width="24px"
-                height="24px"
-              />
+              <></>
+              // <OpenedFolderIcon
+              //   width="24px"
+              //   height="24px"
+              // />
             ) : (
-              <FolderIcon
-                width="24px"
-                height="24px"
-              />
+              // <FolderIcon
+              //   width="24px"
+              //   height="24px"
+              // />
+              <></>
             )
           ) : (
-            <FileIcon
-              width="24px"
-              height="24px"
-            />
+            <></>
+            // <FileIcon
+            //   width="24px"
+            //   height="24px"
+            // />
           )}
         </div>
         <div

@@ -1,24 +1,51 @@
-import { Children, cloneElement } from 'react';
+import React, { FC, PropsWithChildren, ReactNode } from 'react';
 import { useBreadcrumbs } from '@react-aria/breadcrumbs';
+import { AriaBreadcrumbsProps } from '@react-types/breadcrumbs';
+import BreadcrumbsItem from './BreadcrumbsItem';
 
-import type { FC, PropsWithChildren, ReactElement } from 'react';
-import type { AriaBreadcrumbsProps } from '@react-types/breadcrumbs';
+import tailwindcss from '../../styles/tailwind.module.css';
+import classNames from 'classnames';
+import { HomeIcon } from '../icon';
 
-type BreadcrumbsProps = AriaBreadcrumbsProps;
+type BreadcrumbsProps = AriaBreadcrumbsProps & {
+  items: {
+    title: ReactNode;
+    to: string;
+    isDisabled: boolean;
+  }[]
+};
 
-const Breadcrumbs: FC<PropsWithChildren<BreadcrumbsProps>> = (props) => {
+const Breadcrumbs: FC<PropsWithChildren<BreadcrumbsProps>> = ({ items, ...props }) => {
   const { navProps } = useBreadcrumbs(props);
-  const children = Children.toArray(props.children);
   return (
     <nav
       {...navProps}
     >
       <ol
-        className="flex"
+        className={
+          classNames(
+            tailwindcss['flex'],
+            tailwindcss['items-center'],
+          )
+        }
       >
-        {children.map((child, idx) =>
-          cloneElement(child as ReactElement, { isCurrent: idx === children.length - 1 } as object),
-        )}
+        <HomeIcon
+          className={
+            classNames(
+              tailwindcss['mr-1.5'],
+            )
+          }
+          size="1rem"
+        />
+        {items.map(({ title, to }, index) => (
+          <BreadcrumbsItem
+            key={index}
+            to={to}
+            isCurrent={index === items.length - 1}
+          >
+            {title}
+          </BreadcrumbsItem>
+        ))}
       </ol>
     </nav>
   );
