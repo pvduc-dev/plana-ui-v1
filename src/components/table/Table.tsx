@@ -8,7 +8,7 @@ import tailwindcss from '../../styles/tailwind.module.css';
 
 
 interface Header {
-  id: string;
+  id?: string;
   title?: ReactNode;
   value?: AccessorFn<any> | string;
   render?: (val: any) => ReactNode;
