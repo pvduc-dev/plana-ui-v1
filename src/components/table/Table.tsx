@@ -9,9 +9,9 @@ import tailwindcss from '../../styles/tailwind.module.css';
 
 interface Header {
   id: string;
-  title: ReactNode;
-  value: AccessorFn<any> | string;
-  render?: () => ReactNode;
+  title?: ReactNode;
+  value?: AccessorFn<any> | string;
+  render?: (val: any) => ReactNode;
 }
 
 interface TableProps {
@@ -21,13 +21,13 @@ interface TableProps {
 
 const Table = ({ headers, data }: TableProps) => {
   const columnHelperRef = useRef(createColumnHelper());
-  const columns = useMemo(() => headers.map((header) => {
-    const { value } = header;
+  const columns = useMemo(() => headers.map(({ id, value, title, render }) => {
     const accessor =
       typeof value === 'function' ? value : (originalRow: unknown) => (originalRow as Record<string, unknown>)[value as string];
     return columnHelperRef.current.accessor(accessor, {
-      id: header.id,
-      header: () => header.title,
+      id,
+      header: () => title,
+      cell: (cellCtx) => render ? render(cellCtx.getValue()) : cellCtx.renderValue(),
     });
   }), [headers]);
 
@@ -41,7 +41,7 @@ const Table = ({ headers, data }: TableProps) => {
       className={
         classNames(
           tailwindcss['border'],
-          tailwindcss['border-gray-700'],
+          tailwindcss['border-gray-300'],
           tailwindcss['w-full'],
         )
       }
