@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import Table from '../Table';
 
 export default {
@@ -10,20 +10,21 @@ export default {
   },
 } as ComponentMeta<typeof Table>;
 
-const Template: ComponentStory<typeof Table> = (args) => <Table {...args}/>;
+const Template: ComponentStory<typeof Table> = (args) => (
+  <div
+    style={{ backgroundColor: '#fff', padding: '16px', height: 'calc(100vh - 48px)' }}
+  >
+    <Table {...args}/>
+  </div>
+);
 
 export const Primary = Template.bind({});
 Primary.args = {
   headers: [
     {
-      id: 'id',
-      title: 'ID',
-      value: 'id',
-    },
-    {
       id: 'name',
       title: 'Client name',
-      value: (obj) => (obj.name as string)?.toUpperCase(),
+      value: 'name',
     },
     {
       id: 'expiredAt',
@@ -36,22 +37,85 @@ Primary.args = {
       value: 'issuedAt',
     },
     {
+      id: 'status',
+      title: 'Status',
+      value: 'status',
+    },
+    {
       id: 'issuedBy',
       title: 'Issued By',
       value: 'issuedBy',
     },
     {
       id: 'action',
-      render: () => <span>Edit | Delete</span>,
+      render: () => <span><span style={{ color: 'blue' }}>Edit</span> | <span style={{ color: 'red' }}>Delete</span></span>,
     },
   ],
   data: [{
-    id: '0d6b4a04-3e56-4495-be47-3235d486448e',
-    name: 'Chat test',
+    name: 'Chess game (dev)',
+    issuedBy: 'pvduc.dev@gmail.com',
+    issuedAt: '20-09-1996',
+    status: 'Enable',
+    expiredAt: '20-09-1996',
   },
   {
-    id: '05339d32-524d-4703-ba23-b2846dc70528',
-    lastName: 'Duc',
+    name: 'Chat test',
+    issuedBy: 'pvduc.dev@gmail.com',
+    issuedAt: '20-09-1996',
+    status: 'Enable',
+    expiredAt: '20-09-1996',
+  }, {
+    name: 'Chess game (dev)',
+    issuedBy: 'pvduc.dev@gmail.com',
+    issuedAt: '20-09-1996',
+    status: 'Enable',
+    expiredAt: '20-09-1996',
+  },
+  {
+    name: 'Chat test',
+    issuedBy: 'pvduc.dev@gmail.com',
+    issuedAt: '20-09-1996',
+    status: 'Enable',
+    expiredAt: '20-09-1996',
+  }, {
+    name: 'Chess game (dev)',
+    issuedBy: 'pvduc.dev@gmail.com',
+    issuedAt: '20-09-1996',
+    status: 'Enable',
+    expiredAt: '20-09-1996',
+  },
+  {
+    name: 'Chat test',
+    issuedBy: 'pvduc.dev@gmail.com',
+    issuedAt: '20-09-1996',
+    status: 'Enable',
+    expiredAt: '20-09-1996',
+  }, {
+    name: 'Chess game (dev)',
+    issuedBy: 'pvduc.dev@gmail.com',
+    issuedAt: '20-09-1996',
+    status: 'Enable',
+    expiredAt: '20-09-1996',
+  },
+  {
+    name: 'Chat test',
+    issuedBy: 'pvduc.dev@gmail.com',
+    issuedAt: '20-09-1996',
+    status: 'Enable',
+    expiredAt: '20-09-1996',
+  }, {
+    name: 'Chess game (dev)',
+    issuedBy: 'pvduc.dev@gmail.com',
+    issuedAt: '20-09-1996',
+    status: 'Enable',
+    expiredAt: '20-09-1996',
+  },
+  {
+    name: 'Chat test',
+    issuedBy: 'pvduc.dev@gmail.com',
+    issuedAt: '20-09-1996',
+    status: 'Enable',
+    expiredAt: '20-09-1996',
   },
   ],
 };
