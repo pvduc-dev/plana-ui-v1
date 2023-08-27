@@ -8,7 +8,7 @@ import tailwindcss from '../../styles/tailwind.module.css';
 
 
 interface Header {
-  id?: string;
+  id: string;
   title?: ReactNode;
   value?: AccessorFn<any> | string;
   render?: (val: any) => ReactNode;
@@ -40,9 +40,16 @@ const Table = ({ headers, data }: TableProps) => {
     <table
       className={
         classNames(
+          tailwindcss['text-[14px]'],
           tailwindcss['border'],
           tailwindcss['border-gray-300'],
           tailwindcss['w-full'],
+          tailwindcss['rounded-md'],
+          tailwindcss['border-separate'],
+          tailwindcss['border-spacing-0'],
+          tailwindcss['overflow-hidden'],
+          tailwindcss['bg-sky-50'],
+          tailwindcss['bg-opacity-60'],
         )
       }
     >
