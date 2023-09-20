@@ -38,6 +38,7 @@ const Table = ({ headers, data }: TableProps) => {
   });
   return (
     <table
+      data-testid="table"
       className={
         classNames(
           tailwindcss['text-[14px]'],
@@ -63,4 +64,4 @@ const Table = ({ headers, data }: TableProps) => {
   );
 };
 
-export default Table;
+export { Table };

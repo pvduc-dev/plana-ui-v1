@@ -19,10 +19,11 @@ const Container: FC<PropsWithChildren<ContainerProps>> = ({ children }) => {
   return (
     <div
       className={CONTAINER_BASE_CLASS}
+      data-testid="container"
     >
       { children }
     </div>
   );
 };
 
-export default Container;
+export { Container };

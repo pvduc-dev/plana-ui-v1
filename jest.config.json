@@ -4,16 +4,17 @@
     "<rootDir>/setupTest.ts"
   ],
   "transform": {
-    "\\.(ts|tsx)$": "babel-jest",
-    "^.+\\.css$": [
-      "jest-transform-css",
-      {
-        "modules": true
-      }
-    ]
+    "\\.(ts|tsx)$": "babel-jest"
   },
   "collectCoverage": false,
   "collectCoverageFrom": [
-    "src/**/*.{ts,tsx}"
-  ]
+    "src/**/*.{ts,tsx}",
+    "!src/**/*.stories.tsx",
+    "!src/**/*.d.ts",
+    "!src/index.ts",
+    "!src/components/**/index.ts"
+  ],
+  "moduleNameMapper": {
+    "\\.css$": "identity-obj-proxy"
+  }
 }

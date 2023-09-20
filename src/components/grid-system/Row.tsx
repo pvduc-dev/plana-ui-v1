@@ -19,10 +19,11 @@ const Row: FC<PropsWithChildren<RowProps>> = ({ children }) => {
   return (
     <div
       className={BASE_ROW_CLASS}
+      data-testid="row"
     >
       {children}
     </div>
   );
 };
 
-export default Row;
+export { Row };

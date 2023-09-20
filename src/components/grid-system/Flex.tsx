@@ -19,10 +19,11 @@ const Flex: FC<PropsWithChildren<FlexProps>> = ({ direction = 'row', children })
   return (
     <div
       className={flexClassName}
+      data-testid="flex"
     >
       {children}
     </div>
   );
 };
 
-export default Flex;
+export { Flex };

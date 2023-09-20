@@ -7,7 +7,7 @@ import { useButton } from 'react-aria';
 
 interface ButtonProps extends AriaButtonProps {
   execute?: () => void;
-  canExecute: true;
+  canExecute?: true;
   isBlock?: boolean;
   color?: string;
   isLoading?: boolean;
@@ -60,6 +60,7 @@ const Button: FC<PropsWithChildren<ButtonProps>> = ({
     <button
       {...buttonProps}
       className={buttonClassName}
+      data-testid="button"
     >
       {children}
     </button>

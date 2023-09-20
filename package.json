@@ -23,6 +23,7 @@
     "build": "tsc && vite build",
     "lint": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --fix",
     "test": "jest",
+    "test:cov": "jest --coverage",
     "lint-staged": "lint-staged",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
@@ -33,6 +34,7 @@
     "@headlessui/react": "^1.7.17",
     "@minoru/react-dnd-treeview": "^3.4.0",
     "@tanstack/react-table": "^8.9.3",
+    "@testing-library/react-hooks": "^8.0.1",
     "classnames": "^2.3.2",
     "react": "16.8.0 || >=17.x",
     "react-aria": "^3.27.0",
@@ -64,7 +66,7 @@
     "@storybook/theming": "^6.5.15",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^14.4.3",
+    "@testing-library/user-event": "^14.5.1",
     "@types/react-dom": "^18.0.9",
     "@types/react-transition-group": "^4.4.6",
     "@typescript-eslint/eslint-plugin": "^5.48.1",
@@ -92,7 +94,7 @@
     "storybook-addon-react-docgen": "^1.2.42",
     "tailwindcss": "^3.2.4",
     "typescript": "^4.9.3",
-    "vite": "^3.2.3"
+    "vite": "3.2.7"
   },
   "peerDependencies": {
     "react": "16.8.0 || >=17.x",

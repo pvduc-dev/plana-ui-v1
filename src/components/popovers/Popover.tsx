@@ -3,13 +3,17 @@ import { Float } from '@headlessui-float/react';
 import { FC } from 'react';
 import classNames from 'classnames';
 import tailwindcss from '../../styles/tailwind.module.css';
+import Button from '../button/Button';
 
 const Popovers: FC = () => {
   return (
-    <Popover>
+    <Popover
+      data-testid="popover"
+    >
       <Float
         portal
         placement="bottom-start"
+        adaptiveWidth
         enter={
           classNames(
             tailwindcss['transition'],
@@ -51,23 +55,31 @@ const Popovers: FC = () => {
           )
         }
       >
+        {/*<Popover.Button*/}
+        {/*  as="div"*/}
+        {/*  className={*/}
+        {/*    classNames(*/}
+        {/*      tailwindcss['w-8'],*/}
+        {/*      tailwindcss['h-8'],*/}
+        {/*      tailwindcss['flex'],*/}
+        {/*      tailwindcss['justify-center'],*/}
+        {/*      tailwindcss['items-center'],*/}
+        {/*      tailwindcss['bg-rose-50'],*/}
+        {/*      tailwindcss['hover:bg-rose-100'],*/}
+        {/*      tailwindcss['text-rose-500'],*/}
+        {/*      tailwindcss['rounded'],*/}
+        {/*    )*/}
+        {/*  }*/}
+        {/*>*/}
+        {/*  121*/}
+        {/*</Popover.Button>*/}
         <Popover.Button
           as="div"
-          className={
-            classNames(
-              tailwindcss['w-8'],
-              tailwindcss['h-8'],
-              tailwindcss['flex'],
-              tailwindcss['justify-center'],
-              tailwindcss['items-center'],
-              tailwindcss['bg-rose-50'],
-              tailwindcss['hover:bg-rose-100'],
-              tailwindcss['text-rose-500'],
-              tailwindcss['rounded'],
-            )
-          }
+          className={classNames(
+            tailwindcss['inline-block'],
+          )}
         >
-          121
+          <Button canExecute>Test</Button>
         </Popover.Button>
 
         <Popover.Panel
@@ -90,7 +102,6 @@ const Popovers: FC = () => {
                 tailwindcss['h-full'],
                 tailwindcss['bg-white'],
                 tailwindcss['p-3'],
-                tailwindcss['text-rose-500'],
                 tailwindcss['rounded-md'],
               )
             }

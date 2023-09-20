@@ -23,7 +23,7 @@ function preventDefaultForScrollKeys(evt: KeyboardEvent) {
   }
 }
 
-export function usePreventScroll(options: PreventScrollOptions) {
+export function usePreventScroll(options: PreventScrollOptions = { isDisabled: false }) {
   const { isDisabled } = options;
   useLayoutEffect(() => {
     if (!isDisabled) {

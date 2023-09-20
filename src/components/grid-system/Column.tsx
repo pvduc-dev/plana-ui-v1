@@ -20,10 +20,11 @@ const Column: FC<PropsWithChildren<ColumnProps>> = ({ children }) => {
   return (
     <div
       className={BASE_COLUMN_CLASS}
+      data-testid="column"
     >
       {children}
     </div>
   );
 };
 
-export default Column;
+export { Column };

@@ -1,5 +1,5 @@
 // Button
-// export { default as Button } from './components/button/Button';
+export { default as Button } from './components/button/Button';
 
 // Tree view
 // export { default as TreeView } from './components/tree-view/TreeView';
@@ -11,3 +11,4 @@
 // export { default as  Flex } from './components/grid-system/Flex';
 // export * from './components/table';
 export * from './components/popovers';
+export * from './components/card';
