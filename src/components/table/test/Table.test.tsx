@@ -4,108 +4,58 @@ import React from 'react';
 
 describe('<Table/>', function () {
   it('should be renders without errors', () => {
+    const headers = [
+      { id: 'id', title: 'ID', value: 'id' },
+      { id: 'name', title: 'Name', value: (rowData: { name: string; }) => rowData.name, render: (value: string) => value },
+      { id: 'name' },
+    ];
+    const data = [
+      { id: 1, name: 'John' },
+      { id: 2, name: 'Jane' },
+    ];
     render(
       <Table
-        data={[[{
-          name: 'Chess game (dev)',
-          issuedBy: 'pvduc.dev@gmail.com',
-          issuedAt: '20-09-1996',
-          status: 'Enable',
-          expiredAt: '20-09-1996',
-        },
-        {
-          name: 'Chat test',
-          issuedBy: 'pvduc.dev@gmail.com',
-          issuedAt: '20-09-1996',
-          status: 'Enable',
-          expiredAt: '20-09-1996',
-        }, {
-          name: 'Chess game (dev)',
-          issuedBy: 'pvduc.dev@gmail.com',
-          issuedAt: '20-09-1996',
-          status: 'Enable',
-          expiredAt: '20-09-1996',
-        },
-        {
-          name: 'Chat test',
-          issuedBy: 'pvduc.dev@gmail.com',
-          issuedAt: '20-09-1996',
-          status: 'Enable',
-          expiredAt: '20-09-1996',
-        }, {
-          name: 'Chess game (dev)',
-          issuedBy: 'pvduc.dev@gmail.com',
-          issuedAt: '20-09-1996',
-          status: 'Enable',
-          expiredAt: '20-09-1996',
-        },
-        {
-          name: 'Chat test',
-          issuedBy: 'pvduc.dev@gmail.com',
-          issuedAt: '20-09-1996',
-          status: 'Enable',
-          expiredAt: '20-09-1996',
-        }, {
-          name: 'Chess game (dev)',
-          issuedBy: 'pvduc.dev@gmail.com',
-          issuedAt: '20-09-1996',
-          status: 'Enable',
-          expiredAt: '20-09-1996',
-        },
-        {
-          name: 'Chat test',
-          issuedBy: 'pvduc.dev@gmail.com',
-          issuedAt: '20-09-1996',
-          status: 'Enable',
-          expiredAt: '20-09-1996',
-        }, {
-          name: 'Chess game (dev)',
-          issuedBy: 'pvduc.dev@gmail.com',
-          issuedAt: '20-09-1996',
-          status: 'Enable',
-          expiredAt: '20-09-1996',
-        },
-        {
-          name: 'Chat test',
-          issuedBy: 'pvduc.dev@gmail.com',
-          issuedAt: '20-09-1996',
-          status: 'Enable',
-          expiredAt: '20-09-1996',
-        },
-        ]]}
-        headers={[
-          {
-            id: 'name',
-            title: 'Client name',
-            value: 'name',
-          },
-          {
-            id: 'expiredAt',
-            title: 'Expired At',
-            value: 'expiredAt',
-          },
-          {
-            id: 'issuedAt',
-            title: 'Issued At',
-            value: 'issuedAt',
-          },
-          {
-            id: 'status',
-            title: 'Status',
-            value: 'status',
-          },
-          {
-            id: 'issuedBy',
-            title: 'Issued By',
-            value: 'issuedBy',
-          },
-          {
-            id: 'action',
-            render: () => <span><span style={{ color: 'blue' }}>Edit</span> | <span style={{ color: 'red' }}>Delete</span></span>,
-          },
-        ]}
+        headers={headers}
+        data={data}
       />);
     const tableElement = screen.getByTestId('table');
     expect(tableElement).toBeInTheDocument();
+  });
+  it('should be has a custom class when className prop is provided', () => {
+    render(
+      <Table
+        headers={[]}
+        data={[]}
+        className="custom-class"
+      />);
+    const tableElement = screen.getByTestId('table');
+    expect(tableElement).toHaveClass('custom-class');
+  });
+  it('should be renders table with correct structure', () => {
+    const headers = [
+      { id: 'id', title: 'ID', value: 'id' },
+      { id: 'name', title: 'Name', value: 'name' },
+    ];
+    const data = [
+      { id: 1, name: 'John' },
+      { id: 2, name: 'Jane' },
+    ];
+    render(
+      <Table
+        headers={headers}
+        data={data}
+      />,
+    );
+    headers.forEach((header) => {
+      const headerElement = screen.getByText(header.title);
+      expect(headerElement).toBeInTheDocument();
+    });
+    data.forEach((rowData: Record<string, string | number>) => {
+      headers.forEach((header) => {
+        const cellValue = rowData[header.id];
+        const cellElement = screen.getByText(cellValue);
+        expect(cellElement).toBeInTheDocument();
+      });
+    });
   });
 });

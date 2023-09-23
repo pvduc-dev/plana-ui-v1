@@ -80,6 +80,7 @@
         "includeTypes": true
       }
     ],
-    "@typescript-eslint/dot-notation": "off"
+    "@typescript-eslint/dot-notation": "off",
+    "@typescript-eslint/naming-convention": "off"
   }
 }

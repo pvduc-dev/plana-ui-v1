@@ -17,9 +17,10 @@ interface Header {
 interface TableProps {
   headers: Header[],
   data: object[];
+  className?: string;
 }
 
-const Table = ({ headers, data }: TableProps) => {
+const Table = ({ headers, data, className }: TableProps) => {
   const columnHelperRef = useRef(createColumnHelper());
   const columns = useMemo(() => headers.map(({ id, value, title, render }) => {
     const accessor =
@@ -30,6 +31,19 @@ const Table = ({ headers, data }: TableProps) => {
       cell: (cellCtx) => render ? render(cellCtx.getValue()) : cellCtx.renderValue(),
     });
   }), [headers]);
+  const tableClassName = useMemo(() => classNames(
+    tailwindcss['text-[14px]'],
+    tailwindcss['border'],
+    tailwindcss['border-gray-300'],
+    tailwindcss['w-full'],
+    tailwindcss['rounded-md'],
+    tailwindcss['border-separate'],
+    tailwindcss['border-spacing-0'],
+    tailwindcss['overflow-hidden'],
+    tailwindcss['bg-sky-50'],
+    tailwindcss['bg-opacity-60'],
+    className,
+  ), [className]);
 
   const table = useReactTable({
     data: data,
@@ -39,20 +53,7 @@ const Table = ({ headers, data }: TableProps) => {
   return (
     <table
       data-testid="table"
-      className={
-        classNames(
-          tailwindcss['text-[14px]'],
-          tailwindcss['border'],
-          tailwindcss['border-gray-300'],
-          tailwindcss['w-full'],
-          tailwindcss['rounded-md'],
-          tailwindcss['border-separate'],
-          tailwindcss['border-spacing-0'],
-          tailwindcss['overflow-hidden'],
-          tailwindcss['bg-sky-50'],
-          tailwindcss['bg-opacity-60'],
-        )
-      }
+      className={tableClassName}
     >
       <TableHeader
         headerGroups={table.getHeaderGroups()}

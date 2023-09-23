@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import tailwindcss from '../../styles/tailwind.module.css';
 
 interface TableHeaderProps {
-  headerGroups: HeaderGroup<any>[]
+  headerGroups: HeaderGroup<never>[]
 }
 
 const TableHeader = ({ headerGroups }: TableHeaderProps) => {
@@ -31,7 +31,7 @@ const TableHeader = ({ headerGroups }: TableHeaderProps) => {
               )
             }
           >
-            {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
+            {flexRender(header.column.columnDef.header, header.getContext())}
           </th>
         ))}
       </tr>
