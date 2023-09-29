@@ -39,6 +39,7 @@ const Dialog: FC<DialogProps> = ({ isOpen, children, ...props }) => {
             tailwindcss['ease-out'],
           ),
         }}
+        data-testid="dialog"
       >
         <div
           className={

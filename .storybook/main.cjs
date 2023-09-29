@@ -10,8 +10,8 @@ module.exports = {
       ...config,
       css: {
         modules: {
-          generateScopedName: '[sha512:contenthash:base32:8]',
-          hashPrefix: 'plana-ui'
+          generateScopedName: '[sha512:contenthash:8]',
+          hashPrefix: 'plana-ui@v1'
         }
       },
     };

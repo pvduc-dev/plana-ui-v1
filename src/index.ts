@@ -12,3 +12,6 @@ export { default as Button } from './components/button/Button';
 // export * from './components/table';
 export * from './components/popovers';
 export * from './components/card';
+export * from './components/table';
+export * from './components/pin-code-input';
+export * from './components/grid-system';

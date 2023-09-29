@@ -2,7 +2,6 @@ import type { FC, MouseEventHandler } from 'react';
 import { NodeModel } from '@minoru/react-dnd-treeview';
 import tailwindcss from '../../styles/tailwind.module.css';
 import classNames from 'classnames';
-import { AngleSmallRightIcon, CaretRightIcon } from '../icon';
 
 interface TreeNodeProps {
   node: NodeModel;
@@ -44,6 +43,7 @@ const TreeNode: FC<TreeNodeProps> = ({ node, depth, isOpen, onToggle }) => {
           {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
           {/*@ts-ignore*/}
           {(node.data.type === 'folder') && (
+            <></>
             // <ChevronRight
             //   className={classNames(
             //     tailwindcss['transition-transform'],
@@ -55,15 +55,15 @@ const TreeNode: FC<TreeNodeProps> = ({ node, depth, isOpen, onToggle }) => {
             //   height="16px"
             //   onClick={handleToggle}
             // />
-            <AngleSmallRightIcon
-              size="1rem"
-              className={classNames(
-                tailwindcss['transition-transform'],
-                {
-                  [tailwindcss['rotate-90']]: isOpen,
-                },
-              )}
-            />
+            // <AngleSmallRightIcon
+            //   size="1rem"
+            //   className={classNames(
+            //     tailwindcss['transition-transform'],
+            //     {
+            //       [tailwindcss['rotate-90']]: isOpen,
+            //     },
+            //   )}
+            // />
           )}
         </div>
         <div

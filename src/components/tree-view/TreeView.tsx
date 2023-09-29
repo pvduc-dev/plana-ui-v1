@@ -1,6 +1,6 @@
 import type { DropOptions, NodeModel } from '@minoru/react-dnd-treeview';
-import { Tree } from '@minoru/react-dnd-treeview';
 import { DndProvider } from 'react-dnd';
+import { Tree } from '@minoru/react-dnd-treeview';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 
 import type { FC } from 'react';
@@ -31,9 +31,10 @@ const TreeView: FC<TreeViewProps> = ({ items, rootId = 0, onDrop = () => {} }) =
         )}
         enableAnimateExpand
         onDrop={onDrop}
+        data-testid="tree-view"
       />
     </DndProvider>
   );
 };
 
-export default TreeView;
+export { TreeView };

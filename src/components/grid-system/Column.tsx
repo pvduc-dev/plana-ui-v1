@@ -2,14 +2,7 @@ import classNames from 'classnames';
 import tailwindcss from '../../styles/tailwind.module.css';
 
 import type { FC, PropsWithChildren } from 'react';
-
-const BASE_COLUMN_CLASS = classNames(
-  tailwindcss['grow-0'],
-  tailwindcss['shrink-0'],
-  tailwindcss['basis-1/12'],
-  tailwindcss['ml-3'],
-  tailwindcss['mr-3'],
-);
+import { useMemo } from 'react';
 
 interface ColumnProps {
   cols?: string | number,
@@ -17,9 +10,17 @@ interface ColumnProps {
 }
 
 const Column: FC<PropsWithChildren<ColumnProps>> = ({ children }) => {
+  const columnClasses = useMemo(() => classNames(
+    tailwindcss['grow-0'],
+    tailwindcss['shrink-0'],
+    tailwindcss['basis-1/3'],
+    tailwindcss['ml-3'],
+    tailwindcss['mr-3'],
+  ), []);
+
   return (
     <div
-      className={BASE_COLUMN_CLASS}
+      className={columnClasses}
       data-testid="column"
     >
       {children}

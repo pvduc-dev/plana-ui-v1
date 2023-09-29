@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import TreeView from '../TreeView';
+import { TreeView } from '../TreeView';
 
 export default {
   title: 'Component/TreeView',

@@ -13,7 +13,7 @@ export default defineConfig({
   css: {
     modules: {
       generateScopedName: '[sha512:contenthash:8]',
-      hashPrefix: 'plana-ui'
+      hashPrefix: 'plana-ui@v1'
     }
   },
   plugins: [
@@ -30,7 +30,7 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
       name: 'Plana',
-      formats: ['es', 'umd'],
+      formats: ['es', 'cjs', 'umd'],
       fileName: (format) => `plana.${format}.js`,
     },
     rollupOptions: {

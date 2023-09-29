@@ -3,6 +3,7 @@ import tailwindcss from '../../styles/tailwind.module.css';
 
 import type { FC, PropsWithChildren } from 'react';
 import { useMemo } from 'react';
+import { tailwind } from '../../utils/tailwindcss';
 
 interface CardProps {
   className?: string;
@@ -13,19 +14,22 @@ interface CardProps {
 }
 
 const Card: FC<PropsWithChildren<CardProps>> = ({ children, className, width }) => {
-  const cardClassName = useMemo(() => classNames(
-    tailwindcss['rounded-lg'],
-    tailwindcss['border'],
-    tailwindcss['border-black'],
-    tailwindcss['p-2'],
-    className,
-  ), [className]);
+  console.log(tailwindcss);
+  const cardClasses = useMemo(() => tailwind(
+    'flex',
+    'flex-col',
+    'rounded-lg',
+    'bg-white',
+    'text-lg',
+    'clear-left',
+  ), []);
   return (
     <div
       style={{
         width: width,
       }}
-      className={cardClassName}
+      className={cardClasses}
+      data-testid="card"
     >
       {children}
     </div>

@@ -2,7 +2,6 @@ import React from 'react';
 
 import type { ComponentStory } from '@storybook/react';
 import { Popover } from '../Popover';
-import { Card } from '../../card';
 
 export default {
   title: 'Component/Popovers',
@@ -12,9 +11,7 @@ export default {
 export const Story: ComponentStory<typeof Popover> = () => {
   return (
     <>
-      <Card>
-        <Popover/>
-      </Card>
+      <Popover/>
     </>
   );
 };

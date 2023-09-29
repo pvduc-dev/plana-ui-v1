@@ -7,7 +7,7 @@ describe('<Table/>', function () {
     const headers = [
       { id: 'id', title: 'ID', value: 'id' },
       { id: 'name', title: 'Name', value: (rowData: { name: string; }) => rowData.name, render: (value: string) => value },
-      { id: 'name' },
+      { id: 'action' },
     ];
     const data = [
       { id: 1, name: 'John' },
