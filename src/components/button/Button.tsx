@@ -1,9 +1,8 @@
 import type { FC, PropsWithChildren, RefObject } from 'react';
 import { useMemo, useRef } from 'react';
-import classNames from 'classnames';
-import tailwindcss from '../../styles/tailwind.module.css';
 import type { AriaButtonProps } from '@react-types/button';
 import { useButton } from 'react-aria';
+import { tailwind } from '../../utils/tailwindcss';
 
 interface ButtonProps extends AriaButtonProps {
   execute?: () => void;
@@ -32,27 +31,27 @@ const Button: FC<PropsWithChildren<ButtonProps>> = ({
     isDisabled: isDisabledCompute,
   }, buttonRef);
 
-  const buttonClassName = useMemo(() => classNames(
-    tailwindcss['text-white'],
-    tailwindcss['text-sm'],
-    tailwindcss['px-4'],
-    tailwindcss['py-2'],
-    tailwindcss['min-w-[5.75rem]'],
-    tailwindcss['rounded-md'],
-    tailwindcss['outline-none'],
-    tailwindcss['font-medium'],
+  const buttonClassName = useMemo(() => tailwind(
+    'text-white',
+    'text-sm',
+    'px-4',
+    'py-2',
+    'min-w-[5.75rem]',
+    'rounded-md',
+    'outline-none',
+    'font-medium',
     {
-      [tailwindcss['block']]: isBlock,
-      [tailwindcss['bg-primary']]: color === 'primary',
-      [tailwindcss['hover:bg-darken-primary']]: color === 'primary',
-      [tailwindcss['active:bg-primary']]: color === 'primary',
-      [tailwindcss['bg-success']]: color === 'success',
-      [tailwindcss['bg-info']]: color === 'info',
-      [tailwindcss['bg-warning']]: color === 'warning',
-      [tailwindcss['bg-danger']]: color === 'danger',
-      [tailwindcss['bg-secondary']]: color === 'secondary',
-      [tailwindcss['font-medium']]: color === 'secondary',
-      [tailwindcss['text-black']]: color === 'secondary',
+      'block': isBlock,
+      'bg-primary': color === 'primary',
+      'hover:bg-darken-primary': color === 'primary',
+      'active:bg-primary': color === 'primary',
+      'bg-success': color === 'success',
+      'bg-info': color === 'info',
+      'bg-warning': color === 'warning',
+      'bg-danger': color === 'danger',
+      'bg-secondary': color === 'secondary',
+      'font-medium': color === 'secondary',
+      'text-black': color === 'secondary',
     },
     className,
   ), [className, color, isBlock]);

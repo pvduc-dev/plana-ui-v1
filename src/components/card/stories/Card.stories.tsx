@@ -22,6 +22,7 @@ const Template: ComponentStory<typeof Card> = (args) => (
         cols={3}
       >
         <Card
+          className="custom-class"
           {...args}
         >
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, tempore.

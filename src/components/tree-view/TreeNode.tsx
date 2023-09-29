@@ -24,6 +24,7 @@ const TreeNode: FC<TreeNodeProps> = ({ node, depth, isOpen, onToggle }) => {
           tailwindcss.flex,
         )
       }
+      data-testid="tree-node"
     >
       <div
         className={classNames(
@@ -40,31 +41,13 @@ const TreeNode: FC<TreeNodeProps> = ({ node, depth, isOpen, onToggle }) => {
           )}
           onClick={handleToggle}
         >
-          {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-          {/*@ts-ignore*/}
-          {(node.data.type === 'folder') && (
-            <></>
-            // <ChevronRight
-            //   className={classNames(
-            //     tailwindcss['transition-transform'],
-            //     {
-            //       [tailwindcss['rotate-90']]: isOpen,
-            //     },
-            //   )}
-            //   width="16px"
-            //   height="16px"
-            //   onClick={handleToggle}
-            // />
-            // <AngleSmallRightIcon
-            //   size="1rem"
-            //   className={classNames(
-            //     tailwindcss['transition-transform'],
-            //     {
-            //       [tailwindcss['rotate-90']]: isOpen,
-            //     },
-            //   )}
-            // />
-          )}
+          <>
+            <div
+              data-testid="toggle-button"
+            >
+              {'>'}
+            </div>
+          </>
         </div>
         <div
           className={
@@ -74,29 +57,6 @@ const TreeNode: FC<TreeNodeProps> = ({ node, depth, isOpen, onToggle }) => {
           }
           onDoubleClick={handleToggle}
         >
-          {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-          {/*@ts-ignore*/}
-          {node.data.type === 'folder' ? (
-            isOpen ? (
-              <></>
-              // <OpenedFolderIcon
-              //   width="24px"
-              //   height="24px"
-              // />
-            ) : (
-              // <FolderIcon
-              //   width="24px"
-              //   height="24px"
-              // />
-              <></>
-            )
-          ) : (
-            <></>
-            // <FileIcon
-            //   width="24px"
-            //   height="24px"
-            // />
-          )}
         </div>
         <div
           className={classNames(
@@ -112,4 +72,3 @@ const TreeNode: FC<TreeNodeProps> = ({ node, depth, isOpen, onToggle }) => {
 };
 
 export default TreeNode;
-// style={{paddingInlineStart: depth * 10}}

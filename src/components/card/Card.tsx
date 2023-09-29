@@ -1,9 +1,7 @@
-import classNames from 'classnames';
-import tailwindcss from '../../styles/tailwind.module.css';
-
 import type { FC, PropsWithChildren } from 'react';
 import { useMemo } from 'react';
 import { tailwind } from '../../utils/tailwindcss';
+import { isNumber } from 'lodash-es';
 
 interface CardProps {
   className?: string;
@@ -14,7 +12,6 @@ interface CardProps {
 }
 
 const Card: FC<PropsWithChildren<CardProps>> = ({ children, className, width }) => {
-  console.log(tailwindcss);
   const cardClasses = useMemo(() => tailwind(
     'flex',
     'flex-col',
@@ -22,11 +19,19 @@ const Card: FC<PropsWithChildren<CardProps>> = ({ children, className, width }) 
     'bg-white',
     'text-lg',
     'clear-left',
-  ), []);
+    className,
+  ), [className]);
+
+  const cardWidth = useMemo(() => {
+    if (isNumber(width)) {
+      return `${width / 16}rem`;
+    }
+    return width;
+  }, [width]);
   return (
     <div
       style={{
-        width: width,
+        width: cardWidth,
       }}
       className={cardClasses}
       data-testid="card"

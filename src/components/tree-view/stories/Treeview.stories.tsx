@@ -69,4 +69,7 @@ Primary.args = {
     },
   ],
   rootId: 0,
+  onDrop: (items) => {
+    console.log(items);
+  },
 };

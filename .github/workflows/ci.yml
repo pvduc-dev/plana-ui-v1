@@ -8,7 +8,7 @@ on:
 #      - 'hotfix/**'
   pull_request:
     branches:
-      - dev
+      - feature/dialog
 
 env:
   NODE_VERSION: 16
@@ -47,6 +47,10 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run test
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   build:
     runs-on: ubuntu-latest
