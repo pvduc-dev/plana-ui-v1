@@ -1,14 +1,11 @@
 name: CI
 
 on:
-#  push:
-#    branches:
-#      - 'feature/**'
-#      - 'bugfix/**'
-#      - 'hotfix/**'
-  pull_request:
+  push:
     branches:
-      - feature/dialog
+      - 'feature/**'
+      - 'bugfix/**'
+      - 'hotfix/**'
 
 env:
   NODE_VERSION: 16
