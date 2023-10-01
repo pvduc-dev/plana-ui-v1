@@ -16,6 +16,11 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args}/>;
 export const Primary = Template.bind({});
 Primary.args = {
   children: 'Sent invites!',
+  execute: () => new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(undefined);
+    }, 3000);
+  }),
 };
 
 export const Success = Template.bind({});

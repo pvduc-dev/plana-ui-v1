@@ -18,6 +18,10 @@ const TableBody = ({ rowModel }: TableBodyProps) => {
     {rowModel.rows.map((row) => (
       <tr
         key={row.id}
+        className={classNames(
+          tailwindcss['border-b'],
+          tailwindcss['last:border-b-0'],
+        )}
       >
         {row.getVisibleCells().map(cell => {
           return (
@@ -30,7 +34,6 @@ const TableBody = ({ rowModel }: TableBodyProps) => {
                 tailwindcss['first:pl-3'],
                 tailwindcss['last::pr-3'],
                 tailwindcss['border-collapse'],
-                tailwindcss['border-b'],
                 tailwindcss['border-gray-300'],
               )
             }

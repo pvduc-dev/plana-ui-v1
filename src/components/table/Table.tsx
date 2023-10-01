@@ -37,7 +37,7 @@ const Table = ({ headers, data, className }: TableProps) => {
     tailwindcss['border-gray-300'],
     tailwindcss['w-full'],
     tailwindcss['rounded-md'],
-    tailwindcss['border-separate'],
+    tailwindcss['border-collapse'],
     tailwindcss['border-spacing-0'],
     tailwindcss['overflow-hidden'],
     tailwindcss['bg-sky-50'],
@@ -51,17 +51,23 @@ const Table = ({ headers, data, className }: TableProps) => {
     getCoreRowModel: getCoreRowModel(),
   });
   return (
-    <table
-      data-testid="table"
+    <div
       className={tableClassName}
     >
-      <TableHeader
-        headerGroups={table.getHeaderGroups()}
-      />
-      <TableBody
-        rowModel={table.getRowModel()}
-      />
-    </table>
+      <table
+        data-testid="table"
+        className={classNames(
+          tailwindcss['w-full'],
+        )}
+      >
+        <TableHeader
+          headerGroups={table.getHeaderGroups()}
+        />
+        <TableBody
+          rowModel={table.getRowModel()}
+        />
+      </table>
+    </div>
   );
 };
 

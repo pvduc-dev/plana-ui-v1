@@ -8,18 +8,15 @@ describe('<Button/>', () => {
     expect(buttonElement).toBeInTheDocument();
   });
 
-  it('should be disabled when isDisabled prop is true', () => {
-    render(<Button isDisabled>Click me</Button>);
-    const buttonElement = screen.getByTestId('button');
-
-    expect(buttonElement).toBeDisabled();
-  });
-
-  it('should be disabled when isLoading prop is true', () => {
-    render(<Button isLoading>Click me</Button>);
-    const buttonElement = screen.getByTestId('button');
-
-    expect(buttonElement).toBeDisabled();
+  it('should be disabled when canExecute prop is false', () => {
+    const { getByTestId } = render(
+      <Button
+        canExecute={false}
+      >
+        Click me
+      </Button>,
+    );
+    expect(getByTestId('button')).toBeDisabled();
   });
 
   it('should be has a custom class when className prop is provided', () => {

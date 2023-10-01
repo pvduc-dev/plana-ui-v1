@@ -7,17 +7,25 @@ import { CSSTransition } from 'react-transition-group';
 import { mergeProps } from '@react-aria/utils';
 import classNames from 'classnames';
 import tailwindcss from '../../styles/tailwind.module.css';
+import { usePreventScroll } from '../../hooks/usePreventScroll';
 
-interface DialogProps extends AriaDialogProps, ModalProps {}
+interface DialogProps extends AriaDialogProps, ModalProps {
+}
 
 const Dialog: FC<DialogProps> = ({ isOpen, children, ...props }) => {
   const ref = useRef<HTMLDivElement>(null);
   const { overlayProps, underlayProps } = useOverlay(props, ref);
   const { modalProps } = useModal();
-  const { dialogProps } = useDialog({
-    ...props,
-    role: 'dialog',
-  }, ref);
+  const { dialogProps } = useDialog(
+    {
+      ...props,
+      role: 'dialog',
+    },
+    ref,
+  );
+  usePreventScroll({
+    isDisabled: !isOpen,
+  });
   return (
     <OverlayContainer>
       <CSSTransition
@@ -25,9 +33,7 @@ const Dialog: FC<DialogProps> = ({ isOpen, children, ...props }) => {
         unmountOnExit
         timeout={{ enter: 0, exit: 250 }}
         classNames={{
-          enter: classNames(
-            tailwindcss['opacity-0'],
-          ),
+          enter: classNames(tailwindcss['opacity-0']),
           enterDone: classNames(
             tailwindcss['opacity-1'],
             tailwindcss['transition'],
@@ -42,16 +48,14 @@ const Dialog: FC<DialogProps> = ({ isOpen, children, ...props }) => {
         data-testid="dialog"
       >
         <div
-          className={
-            classNames(
-              tailwindcss['fixed'],
-              tailwindcss['inset-0'],
-              tailwindcss['flex'],
-              tailwindcss['justify-center'],
-              tailwindcss['z-50'],
-              tailwindcss['bg-slate-400/20'],
-            )
-          }
+          className={classNames(
+            tailwindcss['fixed'],
+            tailwindcss['inset-0'],
+            tailwindcss['flex'],
+            tailwindcss['justify-center'],
+            tailwindcss['z-50'],
+            tailwindcss['bg-slate-400/20'],
+          )}
           {...underlayProps}
         >
           <CSSTransition
@@ -59,9 +63,7 @@ const Dialog: FC<DialogProps> = ({ isOpen, children, ...props }) => {
             nodeRef={ref}
             timeout={{ enter: 0, exit: 250 }}
             classNames={{
-              appear: classNames(
-                tailwindcss['translate-y-2'],
-              ),
+              appear: classNames(tailwindcss['translate-y-2']),
               appearDone: classNames(
                 tailwindcss['translate-y-0'],
                 tailwindcss['transition'],
@@ -77,19 +79,16 @@ const Dialog: FC<DialogProps> = ({ isOpen, children, ...props }) => {
             <div
               {...mergeProps(overlayProps, dialogProps, modalProps)}
               ref={ref}
-              className={
-                classNames(
-                  tailwindcss['focus:outline-none'],
-                  tailwindcss['my-auto'],
-                )
-              }
+              className={classNames(
+                tailwindcss['focus:outline-none'],
+                tailwindcss['my-auto'],
+              )}
             >
               {children}
             </div>
           </CSSTransition>
         </div>
       </CSSTransition>
-
     </OverlayContainer>
   );
 };
