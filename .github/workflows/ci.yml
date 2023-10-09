@@ -9,6 +9,7 @@ on:
   push:
     branches:
       - dev
+      - release
 
 env:
   NODE_VERSION: 16
