@@ -13,9 +13,7 @@ jobs:
           release-type: node
           package-name: plana-ui
           token: ${{secrets.GITHUB_TOKEN}}
-          prerelease: true
-          bump-minor-pre-major: true
-          bump-patch-for-minor-pre-major: true
+          prerelease: alpha
 #      - uses: actions/checkout@v3
 #        if: ${{ steps.release.outputs.release_created }}
 #      - uses: actions/setup-node@v3
