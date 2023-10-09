@@ -23,6 +23,7 @@
     "build": "tsc && vite build",
     "lint": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --fix",
     "test": "jest",
+    "test:cov": "jest --coverage",
     "lint-staged": "lint-staged",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
