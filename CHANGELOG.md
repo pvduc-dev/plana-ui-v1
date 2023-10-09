@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.1.0](https://github.com/pvduc-dev/plana-ui-v1/compare/v3.0.0...v3.1.0) (2023-10-09)
+
+
+### Features
+
+* add base table component ([6417584](https://github.com/pvduc-dev/plana-ui-v1/commit/64175841ab77bf14ebcacd19f66569838e584e05))
+* Add base table component ([49e359a](https://github.com/pvduc-dev/plana-ui-v1/commit/49e359ad2b397708d0c55ce04f6e42156092f879))
+* Add base table component ([9f3a446](https://github.com/pvduc-dev/plana-ui-v1/commit/9f3a44677845b994d26497054bc1b426e59817c9))
+* **button-component:** Create reusable Button component. ([5f4caba](https://github.com/pvduc-dev/plana-ui-v1/commit/5f4caba6d68f86d3d34f094ea1573ddb02776253))
+* Create reusable Table component. ([15ef020](https://github.com/pvduc-dev/plana-ui-v1/commit/15ef0207cf94b422340ed1199e1cc1f3dae84d9c))
+* Create reusable Table component. ([9d08088](https://github.com/pvduc-dev/plana-ui-v1/commit/9d08088863b0823cbf78fdaa9f70b58e2065e2fc))
+* Create reusable Table component. ([c252e43](https://github.com/pvduc-dev/plana-ui-v1/commit/c252e43b924b50eabb7a8a2a4c31cb91d055c50b))
+
 ## [3.0.0](https://github.com/pvduc-dev/plana-ui/compare/v2.6.0...v3.0.0) (2023-02-19)
 
 
