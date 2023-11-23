@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.2](https://github.com/pvduc-dev/plana-ui-v1/compare/v3.1.1...v3.1.2) (2023-11-23)
+
+
+### Bug Fixes
+
+* Test pre-release. ([66e6905](https://github.com/pvduc-dev/plana-ui-v1/commit/66e6905bb691f9dc6807313a50725e227739c439))
+
 ## [3.1.1](https://github.com/pvduc-dev/plana-ui-v1/compare/v3.1.0...v3.1.1) (2023-10-09)
 
 
