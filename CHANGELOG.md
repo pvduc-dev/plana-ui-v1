@@ -3,6 +3,8 @@
 ## [3.0.0](https://github.com/pvduc-dev/plana-ui/compare/v2.6.0...v3.0.0) (2023-02-19)
 
 
+### ⚠ BREAKING CHANGES
+
 * update ci workflow
 * update ci workflow
 
